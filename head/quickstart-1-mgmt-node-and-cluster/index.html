@@ -1736,7 +1736,7 @@
 <h2 id="install-a-single-node-k0s-cluster-locally-to-work-as-k0rdents-management-cluster">Install a single-node k0s cluster locally to work as k0rdent's management cluster<a class="headerlink" href="#install-a-single-node-k0s-cluster-locally-to-work-as-k0rdents-management-cluster" title="Permanent link">#</a></h2>
 <p><a href="https://k0sproject.io">k0s Kubernetes</a> is a CNCF-certified minimal single-binary Kubernetes that installs with one command, and brings along its own CLI. We're using it to quickly set up a single-node management cluster on our manager node. However, k0rdent works on any CNCF-certified Kubernetes. If you choose to use something else, Team k0rdent would love to hear how you set things up to work for you.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">&#39;=https&#39;</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSf<span class="w"> </span>https://get.k0s.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>sh
-sudo<span class="w"> </span>k0s<span class="w"> </span>install<span class="w"> </span>controller<span class="w"> </span>--single
+sudo<span class="w"> </span>k0s<span class="w"> </span>install<span class="w"> </span>controller<span class="w"> </span>--enable-worker<span class="w"> </span>--no-taints
 sudo<span class="w"> </span>k0s<span class="w"> </span>start
 </code></pre></div>
 <p>You can check to see if the cluster is working by leveraging kubectl (installed and configured automatically by k0s) via the k0s CLI:</p>
